@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color:rgb(105, 32, 32);
+            color: rgb(250, 233, 233);
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: beige;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .product {
+            text-align: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            width: 30%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to the Sports Shop</h1>
+    </div>
+    <div class="container">
+        <h1 style="color: black;">Featured Products</h1>
+        <div class="product-list">
+            <div class="product">
+                <img src="Qatar-World-Cup-final-ball.webp" alt="Football"><br><br><br><br><br>
+                <h2>Football</h2>
+                <button onclick="buyProduct('Football')">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="images-9.jpg" alt="Basketball">
+                <h2>Shoes</h2>
+                <button onclick="buyProduct('Shoes')">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="images-5.jpg" alt="Cricket Bat">
+                <h2>Cricket Bat</h2>
+                <button onclick="buyProduct('Cricket Bat')">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle the purchase of a product
+        function buyProduct(productName) {
+            // Alert box to confirm the selection
+            alert("You have selected " + productName + ".");
+            
+            // Confirm box to ask if the user wants to proceed
+            let isConfirmed = confirm("Are you sure you want to buy the " + productName + "?");
+            
+            if (isConfirmed) {
+                // Prompt box to ask for quantity
+                let quantity = prompt("How many " + productName + "s would you like to buy?", "1");
+                
+                if (quantity != null && quantity != "") {
+                    // Final confirmation and message
+                    alert("You have ordered " + quantity + " " + productName + "(s). Thank you for your purchase!");
+                } 
+                else {
+                    alert("Order canceled.");
+                }
+            } else {
+                alert("Order canceled.");
+            }
+        }
+    </script>
+</body>
+</html>
